@@ -25,7 +25,7 @@
                         <td>{{ $person->address }}</td>
                         <td>{{ $person->area->name }}</td>
                         <td>
-                            <a href="/umat/{{ $person->code }}/edit" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
+                            <a href="/umat/{{ $person->code }}/ubah" class="btn btn-primary"><i class="fa fa-edit"></i> Ubah</a>
                             <a href="/umat/{{ $person->code }}/hapus" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</a>
                         </td>
                     </tr>

@@ -53,6 +53,19 @@ class PersonController extends Controller
         return redirect(route('people'));
     }
 
+    public function edit(Person $person)
+    {
+        return view('people.edit', [
+            'person' => $person,
+            'areas' => Area::get()
+        ]);
+    }
+
+    public function update(Person $person)
+    {
+
+    }
+
     public function validateRequest()
     {
         return request()->validate([
