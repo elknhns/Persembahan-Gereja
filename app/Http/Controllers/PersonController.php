@@ -63,7 +63,7 @@ class PersonController extends Controller
 
     public function update(Person $person)
     {
-
+        
     }
 
     public function validateRequest()

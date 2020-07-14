@@ -34,12 +34,12 @@
                 </button>
                 </div>
                 <div class="modal-body">
-
+                    Semua perubahan yang tidak Anda simpan akan hilang.
                 </div>
                 <div class="modal-footer">
                     <div class="d-flex">
-                        <a href="{{ route('people') }}" class="btn btn-danger">Ya</a>
-                        <button type="button" class="btn btn-success ml-2" data-dismiss="modal">Tidak</button>
+                        <a href="{{ route('people') }}" class="btn btn-danger">Batal</a>
+                        <button type="button" class="btn btn-success ml-2" data-dismiss="modal">Kembali</button>
                     </div>
                 </div>
             </div>
