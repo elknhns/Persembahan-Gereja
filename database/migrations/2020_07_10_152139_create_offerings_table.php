@@ -15,6 +15,7 @@ class CreateOfferingsTable extends Migration
     {
         Schema::create('offerings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('person_id');
             $table->char('code', 17)->nullable();
             $table->integer('value');
             $table->timestamps();

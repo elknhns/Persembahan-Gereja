@@ -15,9 +15,11 @@ class AreaSeeder extends Seeder
     {
         $faker = Faker::create('id_ID');
 
-        for ($i=0; $i < 10; $i++) { 
+        for ($i=0; $i < 10; $i++) {
+            $street = $faker->streetName; 
             DB::table('areas')->insert([
-                'name' => $faker->streetName
+                'name' => $street,
+                'slug' => \Str::slug($street)
             ]);
         }
     }

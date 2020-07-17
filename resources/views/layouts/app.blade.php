@@ -23,12 +23,13 @@
 <body>
     <div id="app">
         @include('layouts.navigation')
-        <div class="container">
+        <div class="container" style="margin-top:60px">
             <main class="py-4">
                 @include('alert')
                 @yield('content')
             </main>
         </div>
     </div>
+    @stack('script')
 </body>
 </html>

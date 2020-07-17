@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name') }}
@@ -24,6 +24,9 @@
                     </li>
                     <li class="nav-item{{ request()->is('offerings') ? ' active' : '' }}">
                         <a class="nav-link" href="{{ route('offerings') }}">Persembahan</a>
+                    </li>
+                    <li class="nav-item{{ request()->is('areas') ? ' active' : '' }}">
+                        <a class="nav-link" href="{{ route('areas') }}">Lingkungan</a>
                     </li> 
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

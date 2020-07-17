@@ -10,8 +10,15 @@ class Person extends Model
         'name', 'area_id', 'code', 'address'
     ];
 
+    protected $with = ['area'];
+
     public function area()
     {
         return $this->belongsTo(Area::class);
+    }
+
+    public function offerings()
+    {
+        return $this->hasMany(Offering::class);
     }
 }

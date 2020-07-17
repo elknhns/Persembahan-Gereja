@@ -4,7 +4,10 @@
 </div>
 <div class="form-group">
     <label for="name">Nama</label>
-    <input type="text" name="name" id="name" class="form-control" value="{{ old('name') ?? $person->name }}" required>
+    <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') ?? $person->name }}" required>
+    @error('name')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 </div>
 <div class="form-group">
     <label for="address">Alamat</label>
@@ -34,12 +37,12 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                    Semua perubahan yang tidak Anda simpan akan hilang.
+                    Semua perubahan yang tidak Anda simpan akan hilang. Anda yakin ingin keluar dari halaman ini?
                 </div>
                 <div class="modal-footer">
                     <div class="d-flex">
-                        <a href="{{ route('people') }}" class="btn btn-danger">Batal</a>
-                        <button type="button" class="btn btn-success ml-2" data-dismiss="modal">Kembali</button>
+                        <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">Kembali</button>
+                        <a href="{{ route('people') }}" class="btn btn-danger">Keluar</a>
                     </div>
                 </div>
             </div>

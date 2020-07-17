@@ -42,6 +42,7 @@ class PersonController extends Controller
         $name = strtoupper($new['name']);
         $name = str_replace(' ', '', $name);
         $name = substr($name, 0, 9);
+        $name = str_pad($name, 9, '0');
         $id = str_pad($person['id'], 4, '0', STR_PAD_LEFT);
         $new['code'] = $name.$id;
 
@@ -63,13 +64,37 @@ class PersonController extends Controller
 
     public function update(Person $person)
     {
+        // Validate the request
+        $new = $this->validateRequest();
         
+        // Assign the foreign key
+        $new['area_id'] = request('area');
+
+        $person->update($new);
+
+        session()->flash('success', 'Data umat berhasil diperbarui');
+
+        return redirect(route('people'));
+    }
+
+    public function delete(Person $person)
+    {
+        $person->delete();
+
+        session()->flash('success', 'Data umat berhasil dihapus');
+
+        return redirect(route('people'));
+    }
+
+    public function scan(Person $person)
+    {
+        return response()->json($person);
     }
 
     public function validateRequest()
     {
         return request()->validate([
-            'name' => 'required|min:4',
+            'name' => 'required|alpha',
             'address' => 'required'
         ]);
     }
