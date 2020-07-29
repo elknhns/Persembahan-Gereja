@@ -11,9 +11,10 @@
             <th>Tanggal</th>
         </tr>
     </thead>
+    {{ $i = 0 }}
     @foreach ($offerings as $offering)
         <tr>
-            <td>{{ $offering->id }}</td>
+            <td>{{ ++$i }}</td>
             <td>{{ $offering->person->name }}</td>
             <td>{{ $offering->person->area->name }}</td>
             <td>{{ $offering->value }}</td>
