@@ -25,7 +25,7 @@
             @if ($people->count())
                 @foreach ($people as $person)
                     <tr>
-                        <td >{{ $person->id }}</td>
+                        <td>{{ $person->id }}</td>
                         <td>{{ $person->name }}</td>
                         <td>{{ $person->address }}</td>
                         <td>

@@ -15,7 +15,7 @@
             </div>
             <div class="modal-footer">
                 <div class="d-flex">
-                    <form action="{{ route('areas.delete') }}" method="post">
+                    <form action="/lingkungan/{{ $area->slug }}/hapus" method="post">
                         @method('delete')
                         <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">Kembali</button>
                         <button type="submit" class="btn btn-danger">Hapus</button>

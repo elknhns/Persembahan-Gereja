@@ -28,11 +28,12 @@ Route::get('/umat/scan/{person:code}', 'PersonController@scan');
 
 Route::get('lingkungan', 'AreaController@index')->name('areas');
 Route::post('/lingkungan/tambah', 'AreaController@create')->name('areas.create');
-Route::patch('/lingkungan/hapus', 'AreaController@delete')->name('areas.delete');
 
 Route::get('/lingkungan/{area:slug}', 'AreaController@show');
+Route::delete('/lingkungan/{area:slug}/hapus', 'AreaController@delete');
 
 Route::get('/persembahan', 'OfferingController@index')->name('offerings');
+Route::get('/persembahan/export_to_excel', 'OfferingController@exportToExcel')->name('offerings.excel');
 Route::get('/persembahan/tambah', 'OfferingController@create')->name('offerings.create');
 Route::post('/persembahan/simpan', 'OfferingController@store')->name('offerings.store');
 Route::get('/persembahan/{offering:code}', 'OfferingController@show')->name('offerings.show');

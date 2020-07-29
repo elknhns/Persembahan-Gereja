@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\{Offering, Person};
+use App\Exports\OfferingsExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OfferingController extends Controller
 {
@@ -81,5 +83,10 @@ class OfferingController extends Controller
             'person_id' => 'required',
             'value' => 'required'
         ]);
+    }
+
+    public function exportToExcel()
+    {
+        return Excel::download(new OfferingsExport, 'Laporan Persembahan.xlsx');
     }
 }

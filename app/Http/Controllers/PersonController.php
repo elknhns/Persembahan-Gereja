@@ -12,10 +12,10 @@ class PersonController extends Controller
         $this->middleware('auth');
     }
     
-    public function index()
+    public function index(Request $request)
     {
         return view('people.index', [
-            'people' => Person::paginate(10)
+            'people' => Person::filter($request)->paginate(10)
         ]);
     }
 

@@ -19,7 +19,7 @@
                 @foreach ($areas as $area)
                     <tr>
                         <td>{{ $area->id }}</td>
-                        <td>{{ $area->name }}</td>
+                        <td><a href="/lingkungan/{{ $area->slug }}">{{ $area->name }}</a></td>
                         <td class="row d-flex justify-content-center">                            
                             @include('areas.modals.delete')
                         </td>

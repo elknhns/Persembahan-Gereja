@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Filters\PersonFilter;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
@@ -20,5 +22,10 @@ class Person extends Model
     public function offerings()
     {
         return $this->hasMany(Offering::class);
+    }
+
+    public function scopeFilter(Builder $builder, $request)
+    {
+        return (new PersonFilter($request))->filter($builder);
     }
 }

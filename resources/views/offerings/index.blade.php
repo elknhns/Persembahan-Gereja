@@ -2,10 +2,11 @@
 
 @section('content')
     <div class="d-flex justify-content-between">
-        <h3>
-            Persembahan
-        </h3>
-        <a href="{{ route('offerings.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Persembahan</a>
+        <h3>Persembahan</h3>
+        <div>
+            <a href="{{ route('offerings.excel') }}" class="btn btn-secondary"><i class="fa fa-print"></i> Print Laporan</a>
+            <a href="{{ route('offerings.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Persembahan</a>
+        </div>
     </div>
     <hr>
     <table class="table table-striped">
