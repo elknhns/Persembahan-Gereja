@@ -1,5 +1,5 @@
 <h1>LAPORAN KARTU PERSEMBAHAN YANG MASUK</h1>
-<h3>Tanggal {{ $year_start ?? '2019' }} s/d {{ $year_end ?? '2020' }}</h3>
+<h3>Tanggal {{ $dateStart }} s/d {{ $dateEnd }}</h3>
 <br>
 <table>
     <thead>

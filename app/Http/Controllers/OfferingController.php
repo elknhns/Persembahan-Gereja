@@ -87,6 +87,8 @@ class OfferingController extends Controller
 
     public function exportToExcel()
     {
-        return Excel::download(new OfferingsExport, 'Laporan Persembahan.xlsx');
+        $dateStart = request('dateStart');
+        $dateEnd = request('dateEnd');
+        return Excel::download(new OfferingsExport($dateStart, $dateEnd), 'Laporan Persembahan.xlsx');
     }
 }
